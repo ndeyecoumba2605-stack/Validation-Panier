@@ -9,62 +9,121 @@
 <body>
     <!-- Contenu principal -->
     <main id="main-content">
+
         <section id="home" class="home">
-             <header class="en-tete">
-                <div class="logo">SHEIN <span>Validation</span>
-                </div>
+            <header class="en-tete">
+                <div class="logo">SHEIN<span>Validation</span></div>
+
+                <nav class="nav-principale">
+                    <a href="#home" id="nav-accueil" class="active">Accueil</a>
+                    <a href="#" id="nav-panier">Soumettre un panier</a>
+                    <a href="#" id="nav-suivi">Suivre ma demande</a>
+                    <a href="#fonctionnement" id="nav-apropos">À propos</a>
+                </nav>
+
                 <div class="btn-container">
-                    <button class="btn" id="btn-connexion">Se connecter</button>
-                    <button class="btn" id="btn-inscription">S'inscrire</button>
+                    <button class="btn btn-outline" id="btn-connexion">
+                        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                        Connexion
+                    </button>
+                    <button class="btn btn-outline" id="btn-inscription">
+                        S'inscrire
+                    </button>
                 </div>
             </header>
-           
+
             <div class="content">
                 <p class="welcome">Bienvenue sur SHEIN Validation ✨</p>
-                <h1>Votre panier est entre de bonnes mains.</h1>
+                <h1>Votre panier, notre <span class="accent">validation</span>.</h1>
                 <p>
-                    Soumettez simplement le lien de votre panier
-                    et suivez facilement son processus de validation.
+                    Soumettez le lien de votre panier <span class="accent">SHEIN</span> et laissez-nous
+                    vérifier vos articles avant la validation de votre commande.
                 </p>
                 <div class="btn-container">
-                    <button class="btn" id="btn-panier">Soumettre mon panier</button>
-                    <button class="btn" id="btn-suivi">Suivre ma demande</button>
-                </div>
-            </div>
-            <div id="fonctionnement" class="fonctionnement">
-                <h2>Comment ça marche ?</h2>
-                <p>Une procédure simple pour soumettre et suivre votre panier.</p>
-                <div class="etapes">
-                    <!-- Étape 1 -->
-                    <article class="etape">
-                        <span class="numero">01</span>
-                        <h3>Partagez votre panier</h3>
-                        <p>
-                            Copiez le lien de votre panier et
-                            envoyez-le via notre formulaire.
-                        </p>
-                    </article>
-                    <!-- Étape 2 -->
-                    <article class="etape">
-                        <span class="numero">02</span>
-                        <h3>Vérification</h3>
-                        <p>
-                            Votre panier est vérifié et les produits
-                            sont répertoriés dans votre demande.
-                        </p>
-                    </article>
-                    <!-- Étape 3 -->
-                    <article class="etape">
-                        <span class="numero">03</span>
-                        <h3>Validation</h3>
-                        <p>
-                            Une fois la vérification terminée,
-                            votre demande est validée ou refusée.
-                        </p>
-                    </article>
+                    <button class="btn btn-fill" id="btn-panier">
+                        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+                        Soumettre mon panier
+                    </button>
+                    <button class="btn btn-outline" id="btn-suivi">
+                        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+                        Suivre ma demande
+                    </button>
                 </div>
             </div>
         </section>
+
+        <section id="fonctionnement" class="fonctionnement">
+            <h2>Comment ça marche ?</h2>
+            <p>Une procédure simple pour soumettre et suivre votre panier.</p>
+
+            <div class="etapes">
+                <!-- Étape 1 -->
+                <article class="etape">
+                    <span class="numero">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 15 15 9"/><path d="M11 6 13 4a4 4 0 0 1 6 6l-2 2"/><path d="M13 18l-2 2a4 4 0 0 1-6-6l2-2"/></svg>
+                    </span>
+                    <h3>01. Partagez votre panier</h3>
+                    <p>
+                        Copiez le lien de votre panier et
+                        envoyez-le via notre formulaire.
+                    </p>
+                </article>
+                <!-- Étape 2 -->
+                <article class="etape">
+                    <span class="numero">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4h6v2H9z"/><path d="m9 13 2 2 4-4"/></svg>
+                    </span>
+                    <h3>02. Vérification</h3>
+                    <p>
+                        Votre panier est vérifié et les produits
+                        sont répertoriés dans votre demande.
+                    </p>
+                </article>
+                <!-- Étape 3 -->
+                <article class="etape">
+                    <span class="numero">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+                    </span>
+                    <h3>03. Validation</h3>
+                    <p>
+                        Une fois la vérification terminée,
+                        votre demande est validée ou refusée.
+                    </p>
+                </article>
+            </div>
+
+            <div class="avantages">
+                <div class="avantage">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg>
+                    <div>
+                        <h4>Processus simple</h4>
+                        <p>Rapide et sans complication</p>
+                    </div>
+                </div>
+                <div class="avantage">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+                    <div>
+                        <h4>Suivi en temps réel</h4>
+                        <p>Restez informée à chaque étape</p>
+                    </div>
+                </div>
+                <div class="avantage">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3Z"/></svg>
+                    <div>
+                        <h4>Sécurisé et fiable</h4>
+                        <p>Vos informations sont protégées</p>
+                    </div>
+                </div>
+                <div class="avantage">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                    <div>
+                        <h4>Assistance dédiée</h4>
+                        <p>Nous sommes là pour vous</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="identification" class="identification">
             <div id="connexion" class="connexion">
                 <h2>Connexion</h2>
@@ -77,7 +136,7 @@
                     <button type="submit">Se connecter</button>
                 </form>
                 <p class="texte-bas bascule">
-                    Pas encore de compte ? 
+                    Pas encore de compte ?
                     <a href="#" id="lien-vers-inscription">Créer un compte</a>
                 </p>
             </div>
@@ -93,14 +152,12 @@
                     <button type="submit">S'inscrire</button>
                 </form>
                 <p class="texte-bas bascule">
-                    Vous avez déjà un compte ? 
+                    Vous avez déjà un compte ?
                     <a href="#" id="lien-vers-connexion">Se connecter</a>
                 </p>
-            </div>    
+            </div>
         </section>
     </main>
-        
-
 
 <script src="script.js"></script>
 </body>

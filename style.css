@@ -7,31 +7,58 @@
     box-sizing: border-box;
 }
 
-/* Bloque complètement le scroll global */
-html, body {
+html {
+    scroll-behavior: smooth;
+}
+
+/* Le scroll global n'est plus bloqué : la page défile normalement */
+body {
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
     font-family: 'Inter', Arial, sans-serif;
     color: #333333;
 }
 
-/* --- Arrière-plan & Disposition Plein Écran --- */
+/* --- Hero : logo, nav, titre, CTA — posé sur la photo --- */
 .home {
-    height: 100vh;
+    position: relative;
+    min-height: 620px;
     width: 100%;
     background-image: url("images/validation.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: right center;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distribue l'espace verticalement */
-    padding: 20px 60px 25px 60px;
+    padding: 24px 60px 100px;
+    overflow: hidden;
+}
+
+/* Dégradé qui fait fondre le bas de la photo vers le blanc */
+.home::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 82%, #ffffff 100%);
+    pointer-events: none;
+}
+
+/* Voile clair sur la gauche, pour la lisibilité du texte */
+.home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 60%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0));
+    pointer-events: none;
+    z-index: 1;
 }
 
 /* --- En-tête (Header) --- */
 .en-tete {
+    position: relative;
+    z-index: 2;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -55,36 +82,81 @@ html, body {
     margin-left: 5px;
 }
 
-/* Boutons de l'en-tête (Se connecter / S'inscrire) */
+/* Navigation horizontale */
+.nav-principale {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-principale a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-principale a:hover {
+    color: #b85263;
+}
+
+.nav-principale a.active {
+    color: #b85263;
+    border-bottom-color: #b85263;
+}
+
+/* Bouton unique de connexion dans l'en-tête */
 .en-tete .btn-container {
     display: flex;
     gap: 12px;
 }
 
-#btn-connexion, 
-#btn-inscription {
-    background-color: rgba(255, 255, 255, 0.85);
-    color: #b85263;
-    border: 1px solid #e0b0b8;
-    padding: 8px 20px;
+/* --- Boutons génériques (pill) --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     border-radius: 30px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
-    backdrop-filter: blur(4px);
+    cursor: pointer;
     transition: all 0.3s ease;
 }
 
-#btn-connexion:hover, 
-#btn-inscription:hover {
+.btn-outline {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #b85263;
+    border: 1px solid #e0b0b8;
+    padding: 10px 22px;
+    backdrop-filter: blur(4px);
+}
+
+.btn-outline:hover {
     background-color: #b85263;
     color: #ffffff;
     border-color: #b85263;
 }
 
+.btn-fill {
+    background-color: #b85263;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    box-shadow: 0 4px 15px rgba(184, 82, 99, 0.3);
+}
+
+.btn-fill:hover {
+    background-color: #9e4252;
+}
+
 /* --- Hero Section (Texte principal) --- */
 .content {
-    max-width: 520px;
-    margin-left: 20px;
+    position: relative;
+    z-index: 2;
+    max-width: 460px;
+    margin-top: 70px;
 }
 
 .welcome {
@@ -96,64 +168,40 @@ html, body {
 
 .content h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 44px;
-    line-height: 1.1;
-    color: #945656;
+    font-size: clamp(30px, 3.8vw, 44px);
+    line-height: 1.15;
+    color: #1a1a1a;
     margin-bottom: 14px;
     font-weight: 700;
+}
+
+.content h1 .accent {
+    color: #c96b78;
+}
+
+.content p .accent {
+    color: #c96b78;
+    font-weight: 600;
 }
 
 .content p {
     font-size: 15px;
     line-height: 1.5;
-    color: #240202;
+    color: #333333;
     margin-bottom: 22px;
 }
 
-/* Boutons d'action principaux (Soumettre / Suivre) */
 .content .btn-container {
     display: flex;
     gap: 12px;
 }
 
-#btn-panier {
-    background-color: #b85263;
-    color: #ffffff;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: 600;
-    box-shadow: 0 4px 15px rgba(184, 82, 99, 0.3);
-    transition: all 0.3s ease;
-}
-
-#btn-panier:hover {
-    background-color: #9e4252;
-}
-
-#btn-suivi {
-    background-color: rgba(255, 255, 255, 0.8);
-    color: #333333;
-    border: 1px solid #dcdcdc;
-    padding: 12px 24px;
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: 500;
-    backdrop-filter: blur(4px);
-    transition: all 0.3s ease;
-}
-
-#btn-suivi:hover {
-    background-color: #ffffff;
-    border-color: #b85263;
-    color: #b85263;
-}
-
-/* --- Section "Comment ça marche ?" --- */
+/* --- Section "Comment ça marche ?" (fond blanc, sous la photo) --- */
 .fonctionnement {
+    background-color: #ffffff;
     text-align: center;
     width: 100%;
+    padding: 40px 60px 0;
 }
 
 .fonctionnement h2 {
@@ -166,11 +214,11 @@ html, body {
 
 .fonctionnement > p {
     font-size: 13px;
-    color: #666;
-    margin-bottom: 16px;
+    color: #666666;
+    margin-bottom: 24px;
 }
 
-/* Cartes translucides des étapes */
+/* Cartes des étapes (fond blanc opaque, plus besoin de flou) */
 .etapes {
     display: flex;
     justify-content: space-between;
@@ -179,28 +227,24 @@ html, body {
 
 .etape {
     flex: 1;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: #ffffff;
+    border: 1px solid #f0e8e4;
     border-radius: 16px;
-    padding: 16px 18px;
+    padding: 24px 22px;
     text-align: left;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
 }
 
 .numero {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     background-color: #b85263;
     color: #ffffff;
     border-radius: 50%;
-    font-weight: 700;
-    font-size: 13px;
-    margin-bottom: 10px;
+    margin-bottom: 14px;
 }
 
 .etape h3 {
@@ -217,27 +261,58 @@ html, body {
     color: #666666;
 }
 
+/* --- Bande des 4 avantages --- */
+.avantages {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    margin: 32px -60px 0;
+    padding: 24px 60px;
+    background-color: #faf7f5;
+}
+
+.avantage {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    color: #b85263;
+}
+
+.avantage div {
+    text-align: left;
+}
+
+.avantage h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.avantage p {
+    font-size: 11px;
+    color: #777777;
+}
+
 /* --- Section Identification (Fenêtre Modale) --- */
 .identification {
-    display: none; /* Caché par défaut */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.4); /* Voile sombre */
-    backdrop-filter: blur(6px); /* Floutage de l'arrière-plan */
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
     z-index: 1000;
     justify-content: center;
     align-items: center;
 }
 
-/* Affiché quand JS ajoute la classe 'active' */
 .identification.active {
     display: flex;
 }
 
-/* Carte du Formulaire de Connexion */
 .connexion {
     background: rgba(255, 255, 255, 0.95);
     padding: 35px 40px;
@@ -252,7 +327,6 @@ html, body {
     display: none;
 }
 
-/* Affiche uniquement le formulaire sélectionné */
 .identification .connexion.active {
     display: block;
 }
@@ -272,12 +346,11 @@ html, body {
     width: 100%;
 }
 
-/* Alignement vertical des labels et des champs */
 .connexion label {
     display: block;
     font-size: 14px;
     font-weight: 500;
-    color: #333;
+    color: #333333;
     margin-bottom: 2px;
 }
 
@@ -291,7 +364,6 @@ html, body {
     box-sizing: border-box;
 }
 
-/* Style du bouton de soumission */
 .connexion button[type="submit"] {
     margin-top: 10px;
     width: 100%;
@@ -310,12 +382,11 @@ html, body {
     background-color: #9e4252;
 }
 
-/* Style du lien mot de passe oublié */
 .lien-secondaire {
     display: block;
     text-align: right;
     font-size: 12px;
-    color: #666;
+    color: #666666;
     text-decoration: none;
     margin-top: -4px;
     margin-bottom: 6px;
@@ -327,13 +398,12 @@ html, body {
     text-decoration: underline;
 }
 
-/* Style des textes sous les boutons */
 .texte-bas {
     text-align: center;
     font-size: 13px;
-    color: #555;
+    color: #555555;
     margin-top: 20px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #eeeeee;
     padding-top: 15px;
 }
 
@@ -345,4 +415,12 @@ html, body {
 
 .texte-bas a:hover {
     text-decoration: underline;
+}
+
+/* --- Responsive de base --- */
+@media (max-width: 900px) {
+    .nav-principale { display: none; } /* à remplacer plus tard par un menu burger */
+    .content h1 { font-size: 34px; }
+    .etapes { flex-direction: column; }
+    .avantages { flex-direction: column; gap: 16px; }
 }
