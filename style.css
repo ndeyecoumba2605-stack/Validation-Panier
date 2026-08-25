@@ -98,7 +98,7 @@ html, body {
     font-family: 'Playfair Display', serif;
     font-size: 44px;
     line-height: 1.1;
-    color: #600909;
+    color: #945656;
     margin-bottom: 14px;
     font-weight: 700;
 }
@@ -215,4 +215,134 @@ html, body {
     font-size: 12px;
     line-height: 1.4;
     color: #666666;
+}
+
+/* --- Section Identification (Fenêtre Modale) --- */
+.identification {
+    display: none; /* Caché par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4); /* Voile sombre */
+    backdrop-filter: blur(6px); /* Floutage de l'arrière-plan */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Affiché quand JS ajoute la classe 'active' */
+.identification.active {
+    display: flex;
+}
+
+/* Carte du Formulaire de Connexion */
+.connexion {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 35px 40px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.identification .connexion {
+    display: none;
+}
+
+/* Affiche uniquement le formulaire sélectionné */
+.identification .connexion.active {
+    display: block;
+}
+
+.connexion h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: #1a1a1a;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+#form-connexion, #form-inscription {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+/* Alignement vertical des labels et des champs */
+.connexion label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.connexion input {
+    display: block;
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Style du bouton de soumission */
+.connexion button[type="submit"] {
+    margin-top: 10px;
+    width: 100%;
+    padding: 12px;
+    background-color: #b85263;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.connexion button[type="submit"]:hover {
+    background-color: #9e4252;
+}
+
+/* Style du lien mot de passe oublié */
+.lien-secondaire {
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    color: #666;
+    text-decoration: none;
+    margin-top: -4px;
+    margin-bottom: 6px;
+    transition: color 0.2s ease;
+}
+
+.lien-secondaire:hover {
+    color: #b85263;
+    text-decoration: underline;
+}
+
+/* Style des textes sous les boutons */
+.texte-bas {
+    text-align: center;
+    font-size: 13px;
+    color: #555;
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.texte-bas a {
+    color: #b85263;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.texte-bas a:hover {
+    text-decoration: underline;
 }
