@@ -1,0 +1,20 @@
+{
+  "utilisateurs": [
+    {
+      "id": "1",
+      "nom": "Administrateur",
+      "email": "admin@sheinvalidation.com",
+      "motDePasse": "admin123",
+      "role": "admin"
+    },
+    {
+      "nom": "Sokhna momy",
+      "email": "momy2@gmail.com",
+      "motDePasse": "clt123",
+      "role": "cliente",
+      "id": "25zaXQO"
+    }
+  ],
+  "demandes": [],
+  "$schema": "./node_modules/json-server/schema.json"
+}
