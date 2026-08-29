@@ -15,6 +15,33 @@
       "id": "25zaXQO"
     }
   ],
-  "demandes": [],
+  "demandes": [
+    {
+      "id": 3,
+      "clienteId": "25zaXQO",
+      "cliente": "Sokhna momy",
+      "reference": "PAN-003",
+      "lienPanier": "https://fr.shein.com/panier2",
+      "montantUSD": 100,
+      "tauxDollar": 639.79,
+      "montantFCFA": 63979,
+      "priorite": "haute",
+      "statut": "validée",
+      "dateCreation": "2026-08-28T10:42:49.436Z"
+    },
+    {
+      "id": 4,
+      "clienteId": "25zaXQO",
+      "cliente": "Sokhna momy",
+      "reference": "PAN-004",
+      "lienPanier": "https://fr.shein.com/panier3",
+      "montantUSD": 46,
+      "tauxDollar": 665.34,
+      "montantFCFA": 30606,
+      "priorite": "moyenne",
+      "statut": "en attente",
+      "dateCreation": "2026-08-28T21:14:01.903Z"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
