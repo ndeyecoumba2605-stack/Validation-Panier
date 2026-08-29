@@ -100,3 +100,6 @@ automatiquement (chaîne aléatoire) — d'où l'utilisation de
 - Pas de réinitialisation de mot de passe (le lien correspondant informe
   l'utilisateur de contacter l'administrateur).
 - Pas de connexion réelle à l'API SHEIN, pas de paiement automatique.
+
+## Lancement du serveur
+- On lance le serveur avec `npx json-server db.json`
